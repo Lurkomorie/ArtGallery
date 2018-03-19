@@ -81,10 +81,21 @@ class DrawingController extends Controller
         return view('status', compact('message'));
     }
 
-    public function sort(Request $request){
-        $finalArr = null;
-        if($request->filled('title')){
-            $finalArr;
+    public function find(Request $request)
+    {
+        $search = "%{$request->search}%";
+        $drawings = null;
+        switch ($request->order) {
+            case "newness":
+                $drawings = App\Drawing::where($request->column, 'like', $search)->orderBy('date')->get();
+                break;
+            case "lth":
+                $drawings = App\Drawing::where($request->column, 'like', $search)->orderBy('price')->get();
+                break;
+                case "htl":
+                    $drawings = App\Drawing::where($request->column,'like', $search)->orderBy('price', 'desc')->get();
+                break;
         }
+        return view('welcome', compact(['drawings', 'request']));
     }
 }

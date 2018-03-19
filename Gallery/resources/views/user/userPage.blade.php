@@ -17,7 +17,7 @@
                 <div class="card box-shadow">
                     <img class="card-img-top img-fluid" src="..\{{$drawing->picture}}">
                     <div class="card-body">
-                        <h5 class="card-title">{{$drawing->name}}</h5>
+                        <h5 class="card-title text-lg-center">{{$drawing->title}}</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Country: {{$drawing->country}}</li>
                             <li class="list-group-item">City: {{$drawing->city}}</li>

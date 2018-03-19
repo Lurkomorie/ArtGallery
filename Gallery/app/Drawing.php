@@ -24,5 +24,6 @@ class Drawing extends Model
      * @var array
      */
     protected $hidden = [
+
     ];
 }

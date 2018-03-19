@@ -37,6 +37,8 @@ Route::get('removeEvent/{id}', 'EventController@remove');
 //routes for drawing
 Route::get('/', 'DrawingController@index');
 
+Route::post('/', ['as' => 'find_drawing', 'uses' => 'DrawingController@find']);
+
 Route::get('/updateDrawing/{id}',['as' => 'update', 'uses' => 'DrawingController@getUpdateForm']);
 Route::post('updateDrawing',['as' => 'update_drawing','uses' => 'DrawingController@update']);
 
