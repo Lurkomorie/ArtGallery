@@ -15,17 +15,18 @@ class CreateDrawingsTable extends Migration
     {
         Schema::create('drawings', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->text('name');
-            $table->text('city');
-            $table->text('country');
-            $table->date('date');
-            $table->text('genre');
-            $table->text('technology');
-            $table->text('size');
-            $table->boolean('status');
+            $table->integer('artistId')->default(1);
+            $table->string('picture'); //picture path
+            $table->string('title');
+            $table->string('city');
+            $table->string('country');
+            $table->string('date');
+            $table->string('genre');
+            $table->string('technology');
+            $table->string('size');
+            $table->string('status');
             $table->float('price');
-            $table->boolean('removed');
-            $table->date('redacted');
+            $table->boolean('removed')->default(false);
             $table->timestamps();
         });
     }

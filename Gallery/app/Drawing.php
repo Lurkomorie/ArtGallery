@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Drawing extends Model
 {
-    use Notifiable;
+    /*public $artistId, $picture, $name, $city, $country, $date, $genre, $technology, $size, $status, $price;*/
 
     /**
      * The attributes that are mass assignable.
@@ -14,7 +14,8 @@ class Drawing extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'city', 'country','date','genre','technology','size','status','price'
+        'artistId','picture','removed','redacted','title', 'city', 'country',
+        'date','genre','technology','size','status','price'
     ];
 
     /**
@@ -23,6 +24,5 @@ class Drawing extends Model
      * @var array
      */
     protected $hidden = [
-        'id','removed','redacted'
     ];
 }

@@ -74,6 +74,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Gallery/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/Gallery/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/Gallery/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/Gallery/vendor/twbs/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/Gallery/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/Gallery/vendor/webmozart/assert" />
     </content>
