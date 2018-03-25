@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->text('bio');
+            $table->string('role')->default('artist');
+            $table->boolean('activated')->default(false);
+            $table->string('avatar')->default(' ');
             $table->boolean('admin')->default(false);
             $table->boolean('deleted')->default(false);
             $table->rememberToken();

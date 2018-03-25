@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">{{__('messages.dashboard')}}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,9 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    You are logged in!
+                    {{__('messages.you_are_logged_in')}}!
                 </div>
-                <a href="/" type="button" class="btn btn-light btn-block">Home page</a>
+                <a href="/" type="button" class="btn btn-light btn-block">{{__('messages.home_page')}}</a>
             </div>
         </div>
     </div>

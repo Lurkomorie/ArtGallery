@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-
+    'locales' => ['en' => 'English', 'ru' => 'Russian'],
     'name' => env('APP_NAME', 'ArtGallery'),
 
     /*
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,6 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -159,6 +158,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
 
     ],
 

@@ -4,14 +4,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Update event') }}</div>
+                    <div class="card-header">{{ __('messages.update_event') }}</div>
 
                     <div class="card-body">
                         <form action="{{route('update_event')}}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{$event->name}}" required autofocus>
@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+                                <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('messages.city') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{$event->city}}" required>
@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
+                                <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('messages.country') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="country" type="text" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" name="country" value="{{$event->country}}" required>
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('Date') }}</label>
+                                <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('messages.date') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ $event->date }}" required>
@@ -67,7 +67,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="textarea" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                                <label for="textarea" class="col-md-4 col-form-label text-md-right">{{ __('messages.description') }}</label>
 
                                 <div class="col-md-6">
                                     <textarea id="description" type="text" rows="3" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ $event->description }}" required></textarea>
@@ -83,7 +83,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Update') }}
+                                        {{ __('messages.update') }}
                                     </button>
                                 </div>
                             </div>

@@ -25,7 +25,7 @@ class CreateDrawingsTable extends Migration
             $table->string('technology');
             $table->string('size');
             $table->string('status');
-            $table->float('price');
+            $table->bigInteger('price');
             $table->boolean('removed')->default(false);
             $table->timestamps();
         });

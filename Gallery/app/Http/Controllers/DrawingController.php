@@ -9,7 +9,7 @@ class DrawingController extends Controller
 {
 
     public function index(){
-        $drawings = App\Drawing::all();
+        $drawings = App\Drawing::inRandomOrder()->sortable()->paginate(15);
         return view('welcome', compact('drawings'));
     }
 
@@ -34,6 +34,7 @@ class DrawingController extends Controller
         $drawing->status = $request->status;
         $drawing->price = $request->price;
         $this->validate($request, ['image' => 'required|image']);
+
 
         if($request->hasFile('image')){
             $file = $request->file('image');
@@ -84,18 +85,12 @@ class DrawingController extends Controller
     public function find(Request $request)
     {
         $search = "%{$request->search}%";
-        $drawings = null;
-        switch ($request->order) {
-            case "newness":
-                $drawings = App\Drawing::where($request->column, 'like', $search)->orderBy('date')->get();
-                break;
-            case "lth":
-                $drawings = App\Drawing::where($request->column, 'like', $search)->orderBy('price')->get();
-                break;
-                case "htl":
-                    $drawings = App\Drawing::where($request->column,'like', $search)->orderBy('price', 'desc')->get();
-                break;
-        }
-        return view('welcome', compact(['drawings', 'request']));
+        $drawings = App\Drawing::sortable()->where($request->column, 'like', $search)->get();
+        return view('welcome', compact('drawings'));
+    }
+
+    public function imgPage($id){
+        $drawing = App\Drawing::find($id);
+        return view('draw.index', compact('drawing'));
     }
 }
